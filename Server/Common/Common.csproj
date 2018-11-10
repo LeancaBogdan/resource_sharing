@@ -1,0 +1,39 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp2.1</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <Reference Include="Microsoft.EntityFrameworkCore, Version=2.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60">
+        <HintPath>..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.entityframeworkcore\2.1.1\lib\netstandard2.0\Microsoft.EntityFrameworkCore.dll</HintPath>
+      </Reference>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Domain\Mappings" />
+      <Folder Include="Domain\Repositories" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.2.0-preview3-35497" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.2.0-preview3-35497" />
+      <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="2.2.0-preview1" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Update="Domain\Contexts\DatabaseDetails.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>DatabaseDetails.resx</DependentUpon>
+      </Compile>
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Update="Domain\Contexts\DatabaseDetails.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>DatabaseDetails.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+    </ItemGroup>
+    
+</Project>
