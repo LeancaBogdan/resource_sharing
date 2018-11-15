@@ -7,10 +7,10 @@ namespace Common.Domain.Models
 {
     public class Product : BaseEntity
     {
-        [NotMapped]
-        public User Owner { get; set; }
-        [NotMapped]
-        public User Borrower { get; set; }
+        //[NotMapped]
+        //public User Owner { get; set; }
+        //[NotMapped]
+        //public User Borrower { get; set; }
         public long Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }

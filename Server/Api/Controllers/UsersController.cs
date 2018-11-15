@@ -29,7 +29,8 @@ namespace Api.Controllers
             
             Console.WriteLine("\n{0}\n", user.Name);
 
-            //_context.Users.Add(user);
+            _context.Users.Add(user);
+            _context.SaveChanges();
             var user2 =  _context.Users.First();
             Console.WriteLine(("\n and now we got " + user2.Name));
             
