@@ -11,34 +11,33 @@ namespace Api.Controllers
     [ApiController]
     public class MockController : ControllerBase
     {
-        // GET api/values
+        // GET api/mock
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
         {
-            Console.WriteLine("\n\n\n\n\n\n\n\n\n\nAICI\n\n\n\n\n\n\n\n");
             return new[] {"value1", "value2"};
         }
 
-        // GET api/values/5
+        // GET api/mock/5
         [HttpGet("{id}")]
         public ActionResult<string> Get(int id)
         {
             return "value";
         }
 
-        // POST api/values
+        // POST api/mock
         [HttpPost]
         public void Post([FromBody] string value)
         {
         }
 
-        // PUT api/values/5
+        // PUT api/mock/5
         [HttpPut("{id}")]
         public void Put(int id, [FromBody] string value)
         {
         }
 
-        // DELETE api/values/5
+        // DELETE api/mock/5
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
