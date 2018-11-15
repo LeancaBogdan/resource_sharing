@@ -11,7 +11,7 @@ namespace Api.Controllers
     [ApiController]
     public class UsersController : ControllerBase
     {
-        private readonly ResourcesContext _context = new ResourcesContext();
+        private readonly UserContext _context = new UserContext();
         
         [HttpGet]
         public ActionResult<IEnumerable<User>> Get()

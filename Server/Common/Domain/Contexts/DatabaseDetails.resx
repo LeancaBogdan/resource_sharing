@@ -118,12 +118,12 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="ConnectionString" xml:space="preserve">
-    <value>postgres://lciqecxv:4wfQPkttZ_1uiXBlDgFr490LyYqWOWiP@stampy.db.elephantsql.com:5432/lciqecxv</value>
+    <value>postgres://kqulycfz:BaOkNm6UcOv76eeI3aexwSyMY9nXbOTi@baasu.db.elephantsql.com:5432/kqulycfz</value>
   </data>
   <data name="Password" xml:space="preserve">
-    <value>4wfQPkttZ_1uiXBlDgFr490LyYqWOWiP</value>
+    <value>BaOkNm6UcOv76eeI3aexwSyMY9nXbOTi</value>
   </data>
   <data name="Username" xml:space="preserve">
-    <value>lciqecxv</value>
+    <value>kqulycfz</value>
   </data>
 </root>

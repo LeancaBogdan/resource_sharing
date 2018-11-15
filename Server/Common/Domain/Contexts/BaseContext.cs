@@ -12,7 +12,7 @@ namespace Common.Domain.Contexts
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseNpgsql(_connectionString);
+            optionsBuilder.UseSqlServer(_connectionString);
         }
 
         private static string GetConnectionString()
