@@ -17,8 +17,8 @@ namespace WebApplication2.Controllers
     {
         private readonly ResourcesContext _context = new ResourcesContext();
 
-        [HttpPost]
-        public ActionResult<UserModel> Post([FromBody] LoginModel credentials)
+        [HttpGet]
+        public ActionResult<UserModel> Get([FromBody] LoginModel credentials)
         {
             var user = _context.Users.FirstOrDefault(u => string.Equals(u.Email, credentials.Email));
             Console.WriteLine("\n\n{0}{1}\n\n", user.FirstName, credentials.Email);
