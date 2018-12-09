@@ -7,6 +7,34 @@ import {ButtonToolbar, DropdownButton, MenuItem} from "react-bootstrap";
 
 
 class AppTopBar extends Component {
+
+    constructor(){
+        super();
+
+        this.state = {
+            displayMenu: false,
+        };
+
+        this.showDropdownMenu = this.showDropdownMenu.bind(this);
+        this.hideDropdownMenu = this.hideDropdownMenu.bind(this);
+
+    };
+
+    showDropdownMenu(event) {
+        event.preventDefault();
+        this.setState({ displayMenu: true }, () => {
+            document.addEventListener('click', this.hideDropdownMenu);
+        });
+    }
+
+    hideDropdownMenu() {
+        this.setState({ displayMenu: false }, () => {
+            document.removeEventListener('click', this.hideDropdownMenu);
+        });
+
+    }
+
+
     render() {
         return <div>
             <nav className="navbar navbar-expand-lg navbar-light navbar-default">
@@ -26,20 +54,38 @@ class AppTopBar extends Component {
                         </li>
                     </ul>
                 </div>
-                <ButtonToolbar>
-                    <DropdownButton
-                        bsStyle="small"
-                        title="Username"
-                        noCaret
-                        id="dropdown-no-caret"
-                    >
-                        <MenuItem eventKey="1">Home</MenuItem>
-                        <MenuItem eventKey="2">Another action</MenuItem>
-                        <MenuItem eventKey="3">Something else here</MenuItem>
-                        <MenuItem divider />
-                        <MenuItem eventKey="4">Log out</MenuItem>
-                    </DropdownButton>
-                </ButtonToolbar>
+                <div  className="dropdown" >
+                    <div className="button" onClick={this.showDropdownMenu}> Username </div>
+
+                    { this.state.displayMenu ? (
+                            <ul class="dropDownUl">
+                                <li class="dropDownLi"><a className="active" href="#home">Home</a></li>
+                                <li class="dropDownLi"><a href="#">Another action</a></li>
+                                <li class="dropDownLi"><a href="#">Something else</a></li>
+                                <li class="dropDownLi"><a href="#logout">Log Out</a></li>
+                            </ul>
+                        ):
+                        (
+                            null
+                        )
+                    }
+
+                </div>
+
+                {/*<ButtonToolbar>*/}
+                    {/*<DropdownButton*/}
+                        {/*bsStyle="small"*/}
+                        {/*title="Username"*/}
+                        {/*noCaret*/}
+                        {/*id="dropdown-no-caret"*/}
+                    {/*>*/}
+                        {/*<MenuItem eventKey="1">Home</MenuItem>*/}
+                        {/*<MenuItem eventKey="2">Another action</MenuItem>*/}
+                        {/*<MenuItem eventKey="3">Something else here</MenuItem>*/}
+                        {/*<MenuItem divider />*/}
+                        {/*<MenuItem eventKey="4">Log out</MenuItem>*/}
+                    {/*</DropdownButton>*/}
+                {/*</ButtonToolbar>*/}
             </nav>
         </div>
     }
