@@ -1,16 +1,26 @@
 import React, {Component} from 'react';
-import './App.css';
-import LoginPageContainer from "./containers/LoginPageContainer";
+import {Route, Router, Switch} from "react-router";
+import {Provider} from "react-redux";
+
+import LoginPanel from "./components/LoginPanel";
+import HomePanel from "./components/HomePanel";
 
 class App extends Component {
 
 
     render() {
-        return (
-            <div>
-                <LoginPageContainer store={this.props.store}/>
-            </div>
-        );
+        return <Provider store={this.props.store}>
+            <Router history={this.props.history}>
+                <Switch>
+                    <Route exact path={"/"} render={() => {
+                        return <LoginPanel/>
+                    }}/>
+                    <Route exact path={"/home"} render={() => {
+                        return <HomePanel/>
+                    }}/>
+                </Switch>
+            </Router>
+        </Provider>
     }
 }
 

@@ -1,20 +1,21 @@
 import React from 'react';
 import App from './App';
 import {createReduxStore} from "./redux-init";
-import {render} from 'react-dom'
+import {render} from 'react-dom';
+import createHistory from 'history/createBrowserHistory';
 
 
 bootstrapAndDisplayTheMainAppComponent();
 
 function bootstrapAndDisplayTheMainAppComponent() {
 
-    const toInject="";
     const config = getRuntimeConfiguration();
 
-    const store = createReduxStore(config, toInject);
+    const history = createHistory();
+    const store = createReduxStore(config, history);
 
     render(
-        <App store={store}/>,
+        <App store={store} history={history}/>,
         document.getElementById('root')
     );
 }

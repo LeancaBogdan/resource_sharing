@@ -1,12 +1,14 @@
 import thunkMiddleware from 'redux-thunk';
 import {applyMiddleware, combineReducers, compose, createStore} from "redux";
 import {reducer as formReducer} from 'redux-form'
-import userAuthState from "./reducers/userAuthState";
+
+
+import currentLoggedInUser from "./reducers/currentLoggedInUser";
 
 export const createReduxStore = (config, toInject) => {
 
     const rootReducer = combineReducers({
-        userAuthState: (state, action) => userAuthState(state, action),
+        currentLoggedInUser,
         form: formReducer,
     });
 
@@ -21,10 +23,6 @@ export const createReduxStore = (config, toInject) => {
 
 function getDefaultStoreObject(config) {
     return {
-        blabla: "",
-        userAuthState: {
-            loggedInUser: "",
-            userId: 0
-        }
+       currentLoggedInUser: undefined
     };
 }
