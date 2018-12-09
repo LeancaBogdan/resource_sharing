@@ -1,9 +1,10 @@
 import React, {Component} from "react";
+import AppTopBar from "./AppTopBar";
 
 class HomePanel extends Component{
     render(){
         return <div>
-            Home page in progress...
+            <AppTopBar/>
         </div>
     }
 }
