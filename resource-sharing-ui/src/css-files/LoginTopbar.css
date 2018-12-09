@@ -1,0 +1,38 @@
+.navbar-default {
+    background-color: #660000;
+    border-color: #4d0000;
+    border-bottom: 0px;
+}
+
+.navbar-fixed-top {
+    top: 0;
+    border-width: 0 0 1px;
+    max-height: 60px;
+}
+
+.navbar-logo {
+    margin-left: -15px;
+}
+
+.logo-text {
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    color: white;
+    font-size: 18px;
+    height: 30px;
+    line-height: 10px;
+    margin-left: 5px;
+    margin-top: 20px;
+}
+
+.email-input {
+    height: 25px;
+    width: 30px;
+}
+
+.password-input {
+    height: 25px;
+}
+
+.mytest {
+    margin-left: -20px;
+}
