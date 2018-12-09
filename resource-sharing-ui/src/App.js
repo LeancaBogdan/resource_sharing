@@ -7,7 +7,6 @@ import HomePanel from "./components/HomePanel";
 
 class App extends Component {
 
-
     render() {
         return <Provider store={this.props.store}>
             <Router history={this.props.history}>
