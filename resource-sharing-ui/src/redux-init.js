@@ -4,10 +4,12 @@ import {reducer as formReducer} from 'redux-form'
 
 
 import currentLoggedInUser from "./reducers/currentLoggedInUser";
+import login from './reducers/login-reducer';
 
 export const createReduxStore = (config, toInject) => {
 
     const rootReducer = combineReducers({
+        login,
         currentLoggedInUser,
         form: formReducer,
     });
@@ -23,6 +25,12 @@ export const createReduxStore = (config, toInject) => {
 
 function getDefaultStoreObject(config) {
     return {
-       currentLoggedInUser: undefined
+        login: {
+            loginInProgress: false,
+            loginSuccess: false,
+            loginError: undefined,
+            loggedInUser: ""
+        },
+        currentLoggedInUser: undefined
     };
 }

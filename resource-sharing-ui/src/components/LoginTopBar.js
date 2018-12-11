@@ -23,18 +23,12 @@ class LoginTopbar extends Component {
                         </li>
                     </ul>
                     <form className="form-inline my-2 my-lg-0">
-                        {/*<div>*/}
-                        {/*<label className="mytest" style={{"color": "white", "fontSize": "12px" ,"marginLeft":"-20px;"}}> Login </label>*/}
                         <input className="form-control mr-sm-2 email-input" type="text" placeholder="E-mail..."
                                aria-label="Email"/>
-                        {/*</div>*/}
-                        {/*<div>*/}
-                        {/*<label className={"mr-sm-2"} style={{"color": "white", "fontSize": "12px" ,"marginLeft":"-20px;"}}> Password </label>*/}
                         <input className="form-control mr-sm-2 password-input" type="password" placeholder="Password..."
                                aria-label="Password"/>
-                        {/*</div>*/}
                         <Link to={"/home"}>
-                        <button className="btn btn-sm">Login</button>
+                            <button className="btn btn-sm login-button">Login</button>
                         </Link>
 
                     </form>
