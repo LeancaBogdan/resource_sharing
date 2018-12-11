@@ -29,7 +29,8 @@ namespace WebApplication2
             {
                 builder.AllowAnyOrigin()
                     .AllowAnyMethod()
-                    .AllowAnyHeader();
+                    .AllowAnyHeader()
+                    .AllowCredentials();
             }));
             
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);

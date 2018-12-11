@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Runtime.Serialization;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
 
 public enum Role
 {
@@ -18,4 +20,5 @@ namespace WebApplication2.Domain.Models
         public string Password { get; set; }
         public Role Role { get; set; }
     }
+    
 }
