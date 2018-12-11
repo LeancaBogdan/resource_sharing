@@ -14,6 +14,7 @@ namespace WebApplication2.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
         {
+            Console.WriteLine("\n\nNIGGA\n\n");
             return new string[] {"value1", "value2"};
         }
 
