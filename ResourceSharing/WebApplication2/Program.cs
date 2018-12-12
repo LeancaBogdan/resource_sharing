@@ -27,7 +27,7 @@ namespace WebApplication2
 
             return WebHost.CreateDefaultBuilder(args)
                 .UseStartup<Startup>()
-                .UseUrls($"http://{myIP}:8080/");
+                .UseUrls($"http://127.0.0.1:8080/");
         }
     }
 }
