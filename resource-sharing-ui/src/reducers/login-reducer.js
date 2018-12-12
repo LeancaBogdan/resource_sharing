@@ -25,11 +25,10 @@ const loginStart = (state, action) => {
 };
 
 const loginSuccess = (state, action) => {
-    console.log(state, action);
     return {
         ...state,
         loginInProgress: false,
-        loggedInUser: action.user
+        loggedInUser: action.user,
     }
 };
 

@@ -4,12 +4,14 @@ import {reducer as formReducer} from 'redux-form'
 
 import login from './reducers/login-reducer';
 import loanProducts from './reducers/loan-products-reducer';
+import myProducts from './reducers/my-products-reducer';
 
 export const createReduxStore = (config, toInject) => {
 
     const rootReducer = combineReducers({
         login,
         loanProducts,
+        myProducts,
         form: formReducer,
     });
 
@@ -36,7 +38,12 @@ function getDefaultStoreObject(config) {
                 userId: undefined
             }
         },
-        loanProducts:{
+        loanProducts: {
+            loadInProgress: false,
+            loadError: undefined,
+            products: []
+        },
+        myProducts: {
             loadInProgress: false,
             loadError: undefined,
             products: []

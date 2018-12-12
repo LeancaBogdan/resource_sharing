@@ -53,7 +53,7 @@ class LoginForm extends Component {
                    autoFocus={false}
                    aria-label="Password"
                    onChange={(e) => this.onChangePasswordInput.call(this, e)}/>
-            <Link to={"/redirect"}>
+            <Link to={"/home"}>
             <button className="btn btn-sm login-button"
                     onClick={() => {
                         this.props.onLoginClick(this.state.email, this.state.password);

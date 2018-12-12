@@ -54,3 +54,13 @@ dropDownLi:hover {
     right:6px;
     top: 7px;
 }
+
+.navbar-default {
+    background-color: #e57f46;
+    border-bottom: 0px;
+}
+
+.logo-image{
+    width: 250px;
+    height: auto;
+}

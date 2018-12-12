@@ -5,10 +5,6 @@ import logoImage from "../images/logo_bar_2.png";
 import LoginForm from "./Assets/LoginForm";
 import SignUpForm from "./Assets/SignUpForm";
 
-const mapStateToProps = (state,ownProps) => {
-
-};
-
 class WelcomePageBodyPanel extends Component {
 
     constructor(props) {
