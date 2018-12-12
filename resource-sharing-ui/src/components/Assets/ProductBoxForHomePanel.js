@@ -22,7 +22,10 @@ class ProductBoxForHomePanel extends Component {
         return <div>
             Name: {this.props.productObj.name}
             Desc: {this.props.productObj.description}
-            <button className="btn btn-primary" onClick={()=> {this.props.borrowCallback()}}> Borrow</button>
+            <button className="btn btn-primary" onClick={() => {
+                this.props.borrowCallback(this.props.productObj)
+            }}> Borrow
+            </button>
         </div>
     }
 }

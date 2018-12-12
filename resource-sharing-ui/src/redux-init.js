@@ -5,6 +5,7 @@ import {reducer as formReducer} from 'redux-form'
 import login from './reducers/login-reducer';
 import loanProducts from './reducers/loan-products-reducer';
 import myProducts from './reducers/my-products-reducer';
+import borrow from './reducers/borrow-product-reducer';
 
 export const createReduxStore = (config, toInject) => {
 
@@ -12,6 +13,7 @@ export const createReduxStore = (config, toInject) => {
         login,
         loanProducts,
         myProducts,
+        borrow,
         form: formReducer,
     });
 
@@ -47,6 +49,11 @@ function getDefaultStoreObject(config) {
             loadInProgress: false,
             loadError: undefined,
             products: []
+        },
+        borrow: {
+            borrowInProgress: false,
+            borrowError: undefined,
+            borrowSuccess: false
         }
     };
 }
