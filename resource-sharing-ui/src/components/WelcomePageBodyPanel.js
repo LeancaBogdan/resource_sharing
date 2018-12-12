@@ -2,8 +2,8 @@ import React, {Component} from "react";
 import "../css-files/WelcomePageBodyPanel.css";
 
 import logoImage from "../images/logo_bar_2.png";
-import LoginForm from "./LoginForm";
-import SignUpForm from "./SignUpForm";
+import LoginForm from "./Assets/LoginForm";
+import SignUpForm from "./Assets/SignUpForm";
 
 const mapStateToProps = (state,ownProps) => {
 

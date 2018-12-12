@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import logoImage from "../images/share2.png";
+import logoImage from "../../images/share2.png";
 import {Link} from "react-router-dom";
-import "../css-files/LoginTopbar.css";
+import "../../css-files/LoginTopbar.css";
 
 class LoginTopbar extends Component {
     render() {

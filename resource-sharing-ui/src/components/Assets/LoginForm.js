@@ -2,9 +2,9 @@ import React, {Component} from 'react';
 import {Link} from "react-router-dom";
 import {connect} from "react-redux";
 
-import {loginThunk} from "../actions/login-actions";
+import {loginThunk} from "../../actions/login-actions";
 
-import "../css-files/LoginForm.css";
+import "../../css-files/LoginForm.css";
 
 const mapStateToProps = (state, ownProps) => {
     return {
@@ -53,13 +53,13 @@ class LoginForm extends Component {
                    autoFocus={false}
                    aria-label="Password"
                    onChange={(e) => this.onChangePasswordInput.call(this, e)}/>
-            {/*<Link to={"/home"}>*/}
+            <Link to={"/redirect"}>
             <button className="btn btn-sm login-button"
                     onClick={() => {
                         this.props.onLoginClick(this.state.email, this.state.password);
                     }}> LOGIN
             </button>
-            {/*</Link>*/}
+            </Link>
         </div>
     }
 

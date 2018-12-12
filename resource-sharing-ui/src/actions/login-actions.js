@@ -8,10 +8,9 @@ export const loginStart = () => ({
     type: LOGIN_START
 });
 
-export const loginSuccess = (email, password) => ({
+export const loginSuccess = (user) => ({
     type: LOGIN_SUCCESS,
-    email: email,
-    password: password
+    user: user
 });
 
 export const loginError = (error) => ({
@@ -24,6 +23,12 @@ export const loginThunk = (email, password) => {
 
         dispatch(loginStart());
 
-        LoginService.login(email, password);
+        LoginService.login(email, password).then(data => {
+            data.json().then(userData => {
+                dispatch(loginSuccess(userData))
+            });
+        }).catch(error => {
+            dispatch(loginError(error))
+        });
     }
 };

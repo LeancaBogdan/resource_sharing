@@ -1,19 +1,15 @@
-class LoginService {
+class LoanProductsService {
 
-    static login(email, password) {
+    static getToLoanProducts() {
 
         const options = {
-            method: 'POST',
+            method: "GET",
             headers: new Headers({'content-type': 'application/json'}),
-            mode: 'cors',
-            body: JSON.stringify({
-                email: email,
-                password: password
-            })
+            mode: 'cors'
         };
 
         return new Promise(function (resolve, reject) {
-            fetch('http://127.0.0.1:8080/api/login', options)
+            fetch('http://127.0.0.1:8080/api/products', options)
                 .then(function (response) {
                     if (response.status === 200) {
                         resolve(response);
@@ -24,7 +20,6 @@ class LoginService {
                 });
         });
     }
-
 }
 
-export default LoginService;
+export default LoanProductsService;
