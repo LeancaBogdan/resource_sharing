@@ -15,7 +15,12 @@ namespace WebApplication2.Controllers
     [ApiController]
     public class LoginController
     {
-        private readonly ResourcesContext _context = new ResourcesContext();
+        private ResourcesContext _context = new ResourcesContext();
+
+        public void SetMockResources(ResourcesContext ctx)
+        {
+            _context = ctx;
+        }
 
         [HttpPost]
         public ActionResult<UserModel> Post([FromBody] LoginModel credentials)

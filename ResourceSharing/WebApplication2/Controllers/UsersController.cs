@@ -12,8 +12,13 @@ namespace WebApplication2.Controllers
     [ApiController]
     public class UsersController
     {
-        private readonly ResourcesContext _context = new ResourcesContext();
-        
+        private ResourcesContext _context = new ResourcesContext();
+
+        public void SetMockResources(ResourcesContext ctx)
+        {
+            _context = ctx;
+        }
+
         [HttpGet]
         public ActionResult<IEnumerable<UserModel>> Get() => _context.Users;
 
@@ -32,6 +37,6 @@ namespace WebApplication2.Controllers
 
             return new AcceptedResult();
         }
-        
+
     }
 }

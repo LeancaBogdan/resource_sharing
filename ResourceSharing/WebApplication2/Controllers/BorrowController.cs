@@ -20,8 +20,12 @@ namespace WebApplication2.Controllers
     [ApiController]
     public class BorrowController
     {
-        private readonly ResourcesContext _context = new ResourcesContext();
+        private ResourcesContext _context = new ResourcesContext();
 
+        public void SetMockResources(ResourcesContext ctx)
+        {
+            _context = ctx;
+        }
 
         [HttpGet("{id}/{type}")]
         public ActionResult<IEnumerable<TransactionModel>> Get(string id, string type)

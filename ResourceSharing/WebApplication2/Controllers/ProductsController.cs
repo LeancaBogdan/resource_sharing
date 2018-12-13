@@ -21,7 +21,12 @@ namespace WebApplication2.Controllers
     [ApiController]
     public class ProductsController
     {
-        private readonly ResourcesContext _context = new ResourcesContext();
+        private ResourcesContext _context = new ResourcesContext();
+
+        public void SetMockResources(ResourcesContext ctx)
+        {
+            _context = ctx;
+        }
 
         // Return all products
         [HttpGet]
