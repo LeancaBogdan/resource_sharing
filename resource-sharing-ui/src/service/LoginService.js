@@ -13,7 +13,7 @@ class LoginService {
         };
 
         return new Promise(function (resolve, reject) {
-            fetch('http://127.0.0.1:8080/api/login', options)
+            fetch('http://192.168.178.29:8080/api/login', options)
                 .then(function (response) {
                     if (response.status === 200) {
                         resolve(response);

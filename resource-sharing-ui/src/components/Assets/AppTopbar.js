@@ -64,7 +64,7 @@ class AppTopbar extends Component {
                                 </li>
                                 <li className="dropDownLi">
                                     <Link to={"/my-products"}>
-                                        My Products Management
+                                        My Products
                                     </Link>
                                 </li>
                                 <li className="dropDownLi">

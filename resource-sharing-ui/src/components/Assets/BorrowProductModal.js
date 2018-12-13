@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import "../../css-files/test.css";
+import "../../css-files/BorrowProductModal.css";
 import {connect} from "react-redux";
 import {borrowProductThunk} from "../../actions/borrow-product-actions";
 
@@ -32,21 +32,40 @@ class BorrowProductModal extends Component {
 
 
     render() {
-        return <div className='borrow-modal-test-css'>
-            <input type="text"
-                   placeholder="dd-mm-yyyy"
-                   onChange={(e) => this.onChangeBorrowDateInput.call(this, e)}/>
-            <input type="text"
-                   placeholder="dd-mm-yyyy"
-                   onChange={(e) => this.onChangeReturnDateInput.call(this, e)}/>
-            <button className='btn btn-primary' onClick={() => {
-                this.props.onBorrowClick(this.props.fromUser,
-                    this.props.toUser,
-                    this.state.borrowDate,
-                    this.state.returnDate,
-                    this.props.productId);
-            }}> Borrow
-            </button>
+        return <div className='borrow-modal'>
+            <div className='modal-title'> Borrow {this.props.product.name} </div>
+            <div className="product-price">
+                <span style={{fontWeight: 'bold'}}> Price: </span> {this.props.product.borrowingPrice} RON
+            </div>
+            <div className="description">
+                <span style={{fontWeight: 'bold'}}> Description: </span>{this.props.product.description} </div>
+            <div className="borrow-date">
+                <span style={{fontWeight: 'bold'}}> Borrow Date: </span>
+                <input type="text"
+                       placeholder="dd-mm-yyyy"
+                       onChange={(e) => this.onChangeBorrowDateInput.call(this, e)}/>
+            </div>
+            <div className="return-date">
+                <span style={{fontWeight: 'bold'}}> Return Date: </span>
+                <input type="text"
+                       placeholder="dd-mm-yyyy"
+                       onChange={(e) => this.onChangeReturnDateInput.call(this, e)}/>
+            </div>
+            <div className="buttons">
+                <button className='btn btn-primary btn-sm borrow-button' onClick={() => {
+                    this.props.onBorrowClick(this.props.fromUser,
+                        this.props.toUser,
+                        this.state.borrowDate,
+                        this.state.returnDate,
+                        this.props.productId);
+                    this.props.onBorrowDone();
+                }}> Borrow
+                </button>
+                <button className="btn btn-primary btn-sm cancel-button" onClick={() => {
+                    this.props.onBorrowCancel();
+                }}> Cancel
+                </button>
+            </div>
         </div>
     }
 }
