@@ -1,8 +1,7 @@
-.content {
+.borrowed-products-content {
     height: 100vh;
     width: 100vw;
     background-color: #fcf0e9;
-
 }
 
 .products-area {
@@ -12,16 +11,4 @@
     left: 50%;
     -webkit-transform: translate(-50%);
     transform: translate(-50%);
-}
-
-.product {
-    display: inline-block;
-}
-
-.create-button {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    margin-left: 600px;
-    background-color: #f47934;
-    border-color: #f47934;
 }

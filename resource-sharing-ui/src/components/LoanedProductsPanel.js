@@ -4,8 +4,10 @@ import {connect} from "react-redux";
 import AppTopbar from "./Assets/AppTopbar";
 import ProductBoxForLoanedProductsPanel from "./Assets/ProductBoxForLoanedProductsPanel";
 
+import "../css-files/LoanedProductsPanel.css";
+
 const mapStateToProps = (state, ownProps) => {
-    return{
+    return {
         currentUser: state.login.loggedInUser,
         products: state.loanedProducts.products,
         getLoanedProductsInProgress: state.loanedProducts.getLoanedProductsInProgress,
@@ -33,17 +35,21 @@ class LoanedProductsPanel extends Component {
             return <div> Loading products... </div>
         } else {
             return this.props.products.map((currentProduct, index) => {
-                return <ProductBoxForLoanedProductsPanel productObj = {currentProduct} key = {index}/>
+                return <div className="product">
+                    <ProductBoxForLoanedProductsPanel productObj={currentProduct} key={index}/>
+                </div>
             })
         }
 
     }
 
-    render(){
+    render() {
         const content = this.constructContentHtml();
-        return <div>
-             <AppTopbar username={this.props.currentUser.firstName + " " + this.props.currentUser.lastName}/>
-            {content}
+        return <div className="loaned-products-content">
+            <AppTopbar username={this.props.currentUser.firstName + " " + this.props.currentUser.lastName}/>
+            <div className='products-area'>
+                {content}
+            </div>
         </div>
     }
 }

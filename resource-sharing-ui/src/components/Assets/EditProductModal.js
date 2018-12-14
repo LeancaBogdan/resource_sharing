@@ -9,7 +9,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = dispatch => ({
     onEditClick: (name, description, price, isActive, productId) => {
-        dispatch(editProductThunk(name,description,price,isActive,productId))
+        dispatch(editProductThunk(name, description, price, isActive, productId))
     }
 });
 
@@ -17,9 +17,9 @@ class EditProductModal extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            name: "",
-            description: "",
-            price: -1,
+            name: this.props.productObj.name,
+            description: this.props.productObj.description,
+            price: this.props.productObj.borrowingPrice,
             isActive: true
         }
     }
@@ -38,12 +38,12 @@ class EditProductModal extends Component {
 
     render() {
         return <div className='edit-modal'>
-            <div className='modal-title'>Add product</div>
+            <div className='modal-title'>Edit product {this.state.name}</div>
             <div className='name-input'>
                 <span style={{fontWeight: 'bold'}}> Name: </span>
                 <input type="text"
                        placeholder="name"
-                       // value={this.props.productObj.name}
+                     value={this.state.name}
                        onChange={(e) => this.onChangeNameInput.call(this, e)}
                 />
             </div>
@@ -51,7 +51,7 @@ class EditProductModal extends Component {
                 <span style={{fontWeight: 'bold'}}> Description: </span>
                 <input type="text"
                        placeholder="description"
-                       // value={this.props.productObj.description}
+                    value={this.state.description}
                        onChange={(e) => this.onChangeDescriptionInput.call(this, e)}
                 />
             </div>
@@ -60,7 +60,7 @@ class EditProductModal extends Component {
                 <input type="number"
                        step="1"
                        placeholder="price"
-                       // value={this.props.productObj.borrowingPrice}
+                     value={this.state.price}
                        onChange={(e) => this.onChangePriceInput.call(this, e)}
                 />
             </div>

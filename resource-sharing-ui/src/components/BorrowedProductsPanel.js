@@ -3,6 +3,7 @@ import {getBorrowedProductsThunk} from "../actions/get-borrowed-products-actions
 import {connect} from "react-redux";
 import AppTopbar from "./Assets/AppTopbar";
 import ProductBoxForBorrowedProductsPanel from "./Assets/ProductBoxForBorrowedProductsPanel";
+import "../css-files/BorrowedProductsPanel.css";
 
 const mapStateToProps = (state, ownProps) => {
     return {
@@ -33,7 +34,9 @@ class BorrowedProductsPanel extends Component {
             return <div> Loading products... </div>
         } else {
             return this.props.products.map((currentProduct, index) => {
-               return <ProductBoxForBorrowedProductsPanel productObj = {currentProduct} key = {index}/>
+                return <div className="product">
+                    <ProductBoxForBorrowedProductsPanel productObj={currentProduct} key={index}/>
+                </div>
             })
         }
 
@@ -41,9 +44,11 @@ class BorrowedProductsPanel extends Component {
 
     render() {
         const content = this.constructContentHtml();
-        return <div>
+        return <div className="borrowed-products-content">
             <AppTopbar username={this.props.currentUser.firstName + " " + this.props.currentUser.lastName}/>
-            {content}
+            <div className='products-area'>
+                {content}
+            </div>
         </div>
     }
 }

@@ -109,7 +109,7 @@ class MyProductsPanel extends Component {
 
             return <div className="content">
                 <AppTopbar username={this.props.currentUser.firstName + " " + this.props.currentUser.lastName}/>
-                <button className={'btn btn-primary'}
+                <button className={'btn btn-primary btn-sm create-button'}
                         onClick={() => this.showAddPanel()}
                 > Add product
                 </button>
