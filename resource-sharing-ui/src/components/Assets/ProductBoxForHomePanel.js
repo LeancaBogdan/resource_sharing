@@ -17,7 +17,7 @@ class ProductBoxForHomePanel extends Component {
         return <div>
             <div className="product-box">
                 <div className="name"> {this.props.productObj.name}</div>
-                <div><img src={imagePlaceholder} alt="Photo placeholder" className="photo-placeholder"/></div>
+                <div><img src={imagePlaceholder} alt="Placeholder for products" className="photo-placeholder"/></div>
                 <div className="price"> Price: {this.props.productObj.borrowingPrice} RON</div>
                 <div className="is-active-area">
                     Available to borrow:

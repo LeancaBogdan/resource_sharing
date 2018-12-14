@@ -6,7 +6,7 @@ import ProductBoxForLoanedProductsPanel from "./Assets/ProductBoxForLoanedProduc
 
 import "../css-files/LoanedProductsPanel.css";
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = (state) => {
     return {
         currentUser: state.login.loggedInUser,
         products: state.loanedProducts.products,
@@ -20,9 +20,6 @@ const mapDispatchToProps = dispatch => ({
 });
 
 class LoanedProductsPanel extends Component {
-    constructor(props) {
-        super(props)
-    }
 
     componentDidMount() {
         this.props.onMount(this.props.currentUser.id);

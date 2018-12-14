@@ -11,7 +11,7 @@ class ProductBoxForLoanedProductsPanel extends Component {
             <div className="product-box">
 
                 <div className="name"> {this.props.productObj.borrowedProduct.name}</div>
-                <div><img src={imagePlaceholder} alt="Photo placeholder" className="photo-placeholder"/></div>
+                <div><img src={imagePlaceholder} alt="Placeholder for products" className="photo-placeholder"/></div>
                 <div className="price">
                     <span style={{fontWeight: 'bold'}}> Price: </span>
                     {this.props.productObj.borrowedProduct.borrowingPrice} RON

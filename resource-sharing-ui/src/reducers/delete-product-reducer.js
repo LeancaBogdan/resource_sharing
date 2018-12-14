@@ -3,7 +3,6 @@ import {
     DELETE_PRODUCT_SUCCESS,
     DELETE_PRODUCT_ERROR
 } from "../actions/delete-product-actions"
-import addProductReducer from "./add-product-reducer";
 
 const deleteProductReducer = (state = {}, action) => {
     switch (action.type) {

@@ -5,7 +5,7 @@ import AppTopbar from "./Assets/AppTopbar";
 import ProductBoxForBorrowedProductsPanel from "./Assets/ProductBoxForBorrowedProductsPanel";
 import "../css-files/BorrowedProductsPanel.css";
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = (state) => {
     return {
         currentUser: state.login.loggedInUser,
         products: state.borrowedProducts.products,
@@ -19,9 +19,6 @@ const mapDispatchToProps = dispatch => ({
 });
 
 class BorrowedProductsPanel extends Component {
-    constructor(props) {
-        super(props);
-    }
 
     componentDidMount() {
         this.props.onMount(this.props.currentUser.id);

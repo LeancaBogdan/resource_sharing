@@ -6,32 +6,12 @@ import "../../css-files/PhotoBoxForMyProductsPanel.css";
 import {deleteProductThunk} from "../../actions/delete-product-actions";
 import {connect} from "react-redux";
 
-const mapStateToProps = (state, ownProps) => {
-    return {}
-};
-
 const mapDispatchToProps = dispatch => ({
     onDeleteClick: (productId) => dispatch(deleteProductThunk(productId))
 });
 
 class ProductBoxForMyProductsPanel extends Component {
-    /* How a product looks like:
-    {
-        "owner": {
-            "firstName": "Name",
-            "lastName": "Lastname",
-            "email": "test@test.com",
-            "password": "",
-            "role": 1,
-            "id": "86987f61-4465-49c6-9170-94deac39cf51"
-        },
-        "name": "Product of name",
-        "description": "nothing",
-        "borrowingPrice": 100,
-        "isActive": true,
-        "id": "d0cc358b-cb4f-43fa-9a4d-4abd0c28de1e"
-    }
-    */
+
     render() {
         let isActiveImage;
         if (this.props.productObj.isActive) {
@@ -43,7 +23,7 @@ class ProductBoxForMyProductsPanel extends Component {
         return <div>
             <div className="product-box">
                 <div className="name"> {this.props.productObj.name}</div>
-                <div><img src={imagePlaceholder} alt="Photo placeholder" className="photo-placeholder"/></div>
+                <div><img src={imagePlaceholder} alt="Placeholder for products" className="photo-placeholder"/></div>
                 <div className="price"> Price: {this.props.productObj.borrowingPrice} RON</div>
                 <div className="is-active-area">
                     Available to borrow:
@@ -64,7 +44,7 @@ class ProductBoxForMyProductsPanel extends Component {
 }
 
 export default connect(
-    mapStateToProps,
+    null,
     mapDispatchToProps
 )(ProductBoxForMyProductsPanel)
 

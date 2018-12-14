@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Route, Router, Switch, Redirect} from "react-router";
+import {Route, Router, Switch} from "react-router";
 import {Provider} from "react-redux";
 
 import LoginPanel from "./components/LoginPanel";
