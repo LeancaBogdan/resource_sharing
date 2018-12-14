@@ -9,6 +9,9 @@ import borrow from './reducers/borrow-product-reducer';
 import register from './reducers/register-reducer';
 import borrowedProducts from './reducers/get-borrowed-products-reducer';
 import loanedProducts from './reducers/get-loaned-products-reducer';
+import addProduct from './reducers/add-product-reducer';
+import deleteProduct from './reducers/delete-product-reducer';
+import editProduct from './reducers/edit-product-reducer';
 
 export const createReduxStore = (config, toInject) => {
 
@@ -20,6 +23,9 @@ export const createReduxStore = (config, toInject) => {
         register,
         borrowedProducts,
         loanedProducts,
+        addProduct,
+        deleteProduct,
+        editProduct,
         form: formReducer,
     });
 
@@ -47,9 +53,9 @@ function getDefaultStoreObject(config) {
             }
         },
         register: {
-          registerInProgress: false,
-          registerSuccess: false,
-          registerError: undefined
+            registerInProgress: false,
+            registerSuccess: false,
+            registerError: undefined
         },
         loanProducts: {
             loadInProgress: false,
@@ -77,7 +83,18 @@ function getDefaultStoreObject(config) {
             getLoanedProductsSuccess: false,
             getLoanedProductsError: undefined,
             products: []
-        }
-
+        },
+        addProduct: {
+            addProductInProgress: false,
+            addProductError: undefined
+        },
+        deleteProduct: {
+            deleteProductInProgress: false,
+            deleteProductError: undefined
+        },
+        editProduct: {
+            editProductInProgress: false,
+            editProductError: undefined
+        },
     };
 }

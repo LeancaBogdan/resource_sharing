@@ -44,7 +44,7 @@ class ProductBoxForLoanedProductsPanel extends Component{
     render(){
         return <div>
             Product name: {this.props.productObj.borrowedProduct.name}
-            Loaned to: {this.props.productObj.borrower.firstName + " " + this.props.productObj.owner.lastName}
+            Loaned to: {this.props.productObj.borrower.firstName + " " + this.props.productObj.borrower.lastName}
             Price: {this.props.productObj.borrowedProduct.borrowingPrice}
             From : {this.props.productObj.datePicked}
             Until: {this.props.productObj.dateToReturn}

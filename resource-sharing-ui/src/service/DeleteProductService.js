@@ -1,19 +1,14 @@
-class LoginService {
+class DeleteProductService {
 
-    static login(email, password) {
-
+    static deleteProduct(productId){
         const options = {
-            method: 'POST',
+            method: 'DELETE',
             headers: new Headers({'content-type': 'application/json'}),
             mode: 'cors',
-            body: JSON.stringify({
-                email: email,
-                password: password
-            })
         };
 
         return new Promise(function (resolve, reject) {
-            fetch('http://127.0.0.1:8080/api/login', options)
+            fetch('http://127.0.0.1:8080/api/products/' + productId,options)
                 .then(function (response) {
                     if (response.status === 200) {
                         resolve(response);
@@ -24,7 +19,6 @@ class LoginService {
                 });
         });
     }
-
 }
 
-export default LoginService;
+export default DeleteProductService;
