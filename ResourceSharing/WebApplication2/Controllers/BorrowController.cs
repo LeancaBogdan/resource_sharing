@@ -62,7 +62,8 @@ namespace WebApplication2.Controllers
                 DateToReturn = borrowing.returnDate,
                 Owner = fromUser
             };
-            
+
+            product.IsAvailable = false;
             product.IsActive = true;
             _context.Transactions.Add(transaction);
             _context.SaveChanges();
