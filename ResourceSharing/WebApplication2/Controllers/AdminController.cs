@@ -14,12 +14,7 @@ namespace WebApplication2.Controllers
     [ApiController]
     public class AdminController : ControllerBase
     {
-        private readonly ResourcesContext _context;
-
-        public AdminController(ResourcesContext context)
-        {
-            _context = context;
-        }
+        private readonly ResourcesContext _context = new ResourcesContext();
 
         // GET: api/Admin
         [HttpGet]
@@ -29,17 +24,17 @@ namespace WebApplication2.Controllers
         }
 
         // Return all users
-        [HttpGet]
+        [HttpGet("users")]
         public ActionResult<IEnumerable<UserModel>> Get()
         {
-            List<UserModel> users =_context.Users.Include(s => s).ToList();
+            List<UserModel> users =_context.Users.Where(s => s.Role == Role.user).ToList();
             users.ForEach(s => s.Password = string.Empty);
             return users;
         }
 
         // Return all products owned by user
         // GET: api/{admin id}/products/{user id}
-        [HttpGet]
+        [HttpGet("{admin_id}/products/{user_id}")]
         public ActionResult<IEnumerable<ProductModel>> GetProductsOwnedByUser(string owner_id)
         {
             List<ProductModel> products = _context.Products.Include(s => string.Equals(s.Owner.Id, owner_id)).ToList();
