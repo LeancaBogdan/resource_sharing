@@ -27,7 +27,8 @@ class HomePanel extends Component {
         super(props);
         this.state = {
             visible: false,
-            productToBorrow: {}
+            productToBorrow: {},
+            searchInput: "",
         };
         this.borrowProductCallback = this.borrowProductCallback.bind(this);
         this.borrowProductCancelCallback = this.borrowProductCancelCallback.bind(this);
@@ -50,13 +51,18 @@ class HomePanel extends Component {
         this.setState({visible: false});
     }
 
+    onChangeSearchInput(e) {
+        this.setState({searchInput: e.target.value});
+    }
+
     constructContentHtml() {
         if (this.props.loadError) {
             return <div> Something went wrong!</div>
         } else if (this.props.loadInProgress) {
             return <div> Loading products... </div>
         } else {
-            return this.props.products.map((currentProduct, index) => {
+            let productsToDisplay = this.props.products.filter(product => product.name.toUpperCase().indexOf(this.state.searchInput.toUpperCase()) > -1);
+            return productsToDisplay.map((currentProduct, index) => {
                 //the call back is very important (do similar for add/edit product)
                 return <div className="product"><ProductBoxForHomePanel productObj={currentProduct} key={index}
                                                                         borrowCallback={this.borrowProductCallback}/>
@@ -83,6 +89,10 @@ class HomePanel extends Component {
 
         return <div className="content">
             <AppTopbar username={this.props.currentUser.firstName + " " + this.props.currentUser.lastName}/>
+            <input
+                placeholder="Search"
+                onChange={(e) => this.onChangeSearchInput.call(this, e)}
+            />
             <div className='products-area'>
                 {content}
             </div>

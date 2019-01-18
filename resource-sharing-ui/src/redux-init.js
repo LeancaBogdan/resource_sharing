@@ -12,6 +12,10 @@ import loanedProducts from './reducers/get-loaned-products-reducer';
 import addProduct from './reducers/add-product-reducer';
 import deleteProduct from './reducers/delete-product-reducer';
 import editProduct from './reducers/edit-product-reducer';
+import loadUsers from './reducers/load-users-reducer';
+import createAdmin from './reducers/create-admin-reducer';
+import deleteUser from './reducers/delete-user-reducer';
+import searchProduct from './reducers/search-product-reducer';
 
 export const createReduxStore = (config, toInject) => {
 
@@ -26,6 +30,10 @@ export const createReduxStore = (config, toInject) => {
         addProduct,
         deleteProduct,
         editProduct,
+        loadUsers,
+        createAdmin,
+        deleteUser,
+        searchProduct,
         form: formReducer,
     });
 
@@ -96,5 +104,23 @@ function getDefaultStoreObject(config) {
             editProductInProgress: false,
             editProductError: undefined
         },
+        loadUsers: {
+            loadInProgress: false,
+            loadError: undefined,
+            users: []
+        },
+        createAdmin: {
+            createAdminInProgress: false,
+            createAdminError: undefined
+        },
+        deleteUser: {
+            deleteUserInProgress: false,
+            deleteUserError: undefined
+        },
+        searchProduct: {
+            searchProductInProgress: false,
+            searchProductError: undefined,
+            products: []
+        }
     };
 }

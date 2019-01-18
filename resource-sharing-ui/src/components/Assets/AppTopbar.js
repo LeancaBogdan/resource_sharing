@@ -68,6 +68,11 @@ class AppTopbar extends Component {
                                     </Link>
                                 </li>
                                 <li className="dropDownLi">
+                                    <Link to={"/admin-page"}>
+                                        Admin Page
+                                    </Link>
+                                </li>
+                                <li className="dropDownLi">
                                     <Link to={"/"}>
                                         Logout
                                     </Link>

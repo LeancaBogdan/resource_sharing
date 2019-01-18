@@ -8,6 +8,7 @@ import ErrorPanel from "./components/ErrorPanel";
 import LoanedProductsPanel from "./components/LoanedProductsPanel";
 import BorrowedProductsPanel from "./components/BorrowedProductsPanel";
 import MyProductsPanel from "./components/MyProductsPanel";
+import AdminPanel from "./components/AdminPanel";
 
 class App extends Component {
 
@@ -33,6 +34,9 @@ class App extends Component {
                     }}/>
                     <Route exact path={"/error"} render={() => {
                         return <ErrorPanel/>
+                    }}/>
+                    <Route exact path={"/admin-page"} render={() => {
+                        return <AdminPanel/>
                     }}/>
 
                 </Switch>
