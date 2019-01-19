@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -44,28 +45,61 @@ namespace WebApplication2.Controllers
         // PUT: api/Admin/5
         // Edit an user and make it an admin.
         [HttpPut("{id}")]
-        public ActionResult PutUserModel([FromBody] UserModel userModel)
+        public ActionResult PutUserModel(Guid id)
         {
-            
-            if (!ModelState.IsValid)
+            UserModel user = _context.Users.First(u => id == u.Id);
+            if (null == user)
             {
-                return BadRequest(ModelState);
+                return BadRequest("User with id " + id.ToString() + "not stored!");
             }
 
-            _context.Entry(userModel).State = EntityState.Modified;
-
-
-            userModel.Role = Role.admin;
+            user.Role = Role.admin;
             _context.SaveChanges();
 
             return new AcceptedResult();
-
         }
 
+        // DELETE: api/admin/{id}
+        // Delete an user from the database
+        [HttpDelete("{id}")]
+        public ActionResult Delete(Guid id)
+        {
+            UserModel user = _context.Users.First(u => id == u.Id);
+            if (null == user)
+            {
+                return BadRequest("User with id " + id.ToString() + "not stored!");
+            }
+
+            List<TransactionModel> transactionsInvolvingUser =
+                _context.Transactions.Where(t => user == t.Owner || user == t.Borrower).ToList();
+            if (0 != transactionsInvolvingUser.Count)
+            {
+                foreach (TransactionModel transaction in transactionsInvolvingUser)
+                {
+                    _context.Transactions.Remove(transaction);
+                }
+            }
+            
+            List<ProductModel> productsInvolvingUser = _context.Products.Where(p => user == p.Owner).ToList();
+            if (0 != productsInvolvingUser.Count)
+            {
+                foreach (ProductModel product in productsInvolvingUser)
+                {
+                    _context.Products.Remove(product);
+                }
+            }
+            
+            _context.Users.Remove(user);
+            _context.SaveChanges();
+            
+            return new AcceptedResult();
+        }
         
         private bool UserModelExists(Guid id)
         {
             return _context.Users.Any(e => e.Id == id);
         }
+        
+        
     }
 }
