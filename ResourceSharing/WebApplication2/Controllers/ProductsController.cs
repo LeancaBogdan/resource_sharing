@@ -28,6 +28,28 @@ namespace WebApplication2.Controllers
         public ActionResult<IEnumerable<ProductModel>> Get()
         {
             List<ProductModel> products = _context.Products.Include(s => s.Owner).ToList();
+            foreach (ProductModel product in products)
+            {
+                bool isBorrowed = false;
+                List<TransactionModel> transactionsInvolvingProduct =
+                    _context.Transactions.Where(t => product == t.BorrowedProduct).ToList();
+                if (0 == transactionsInvolvingProduct.Count) continue;
+                foreach (TransactionModel transaction in transactionsInvolvingProduct)
+                {
+                    if (DateTime.Now < transaction.DateToReturn)
+                    {
+                        isBorrowed = false;
+                        break;
+                    }
+                }
+
+                if (!isBorrowed)
+                {
+                    product.IsAvailable = true;
+                }
+            }
+            _context.SaveChangesAsync();
+            
             products.ForEach(s => s.Owner.Password = string.Empty);
             return products;
         } 
