@@ -100,7 +100,7 @@ namespace WebApplication2.Controllers
             {
                 Subject = "One of your products was just borrowed!",
                 Body =
-                    "Congrats! One of your products has just been borrowed by " + toUser.FirstName + " " + toUser.LastName + " using Angry Nerds' Resource Sharing app! :)\n Please contact " + fromUser.Email + " for further details."
+                    "Congrats! One of your products has just been borrowed by " + toUser.FirstName + " " + toUser.LastName + " using Angry Nerds' Resource Sharing app! :)\n Please contact " + toUser.Email + " for further details."
             })
             {
                 await smtpClient.SendMailAsync(message);

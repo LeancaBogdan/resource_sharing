@@ -39,7 +39,7 @@ namespace WebApplication2.Controllers
                 {
                     if (DateTime.Now < transaction.DateToReturn)
                     {
-                        isBorrowed = false;
+                        isBorrowed = true;
                         break;
                     }
                 }
