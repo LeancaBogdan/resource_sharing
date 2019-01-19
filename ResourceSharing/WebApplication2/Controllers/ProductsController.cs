@@ -71,7 +71,7 @@ namespace WebApplication2.Controllers
             
         // Delete a product by id
         [HttpDelete("{productId}")]
-        public ActionResult Delete(string productId)
+        public ActionResult<IEnumerable<ProductModel>> Delete(string productId)
         {
             var product = _context.Products.Include(s => s.Owner).FirstOrDefault(p => p.Id.ToString().Equals(productId));
             
@@ -96,12 +96,13 @@ namespace WebApplication2.Controllers
 
             _context.Products.Remove(product);
             _context.SaveChanges();
-            return new AcceptedResult();
+
+            return _context.Products;
         } 
         
         // Edit a product 
         [HttpPut("{productId}")]
-        public ActionResult Put(string productId, [FromBody] ProductRequestModel product)
+        public ActionResult<IEnumerable<ProductModel>> Put(string productId, [FromBody] ProductRequestModel product)
         {
             var dbProduct = _context.Products.FirstOrDefault((u) => u.Id.ToString().Equals(productId));
 
@@ -117,12 +118,12 @@ namespace WebApplication2.Controllers
             dbProduct.IsAvailable = true;
             _context.SaveChanges();
 
-            return new AcceptedResult();
+            return _context.Products;
         }
         
         // Add a product 
         [HttpPost]
-        public ActionResult Post([FromBody] ProductRequestModel product)
+        public ActionResult<IEnumerable<ProductModel>> Post([FromBody] ProductRequestModel product)
         {
             var user = _context.Users.FirstOrDefault((u) => product.Id == u.Id);
 
@@ -145,7 +146,7 @@ namespace WebApplication2.Controllers
             _context.Products.Add(productModel);
             _context.SaveChanges();
 
-            return new AcceptedResult();
+            return _context.Products;
         }
     }
 }
