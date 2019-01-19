@@ -1,0 +1,45 @@
+.edit-modal {
+    background-color: #ffffff;
+    width: 600px;
+    height: 400px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    border-radius: 20px;
+}
+
+.modal-title {
+    width: 600px;
+    height: 30px;
+    background-color: #f47934;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    text-align: center;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.name-input, .description-input, .price-input {
+    margin-top: 5px;
+    margin-left: 30px;
+}
+
+.buttons {
+    margin-top: 170px;
+}
+
+.edit-button {
+    background-color: #f47934;
+    border-color: #f47934;
+    margin-left: 240px;
+}
+
+.cancel-button {
+    background-color: #ff0000;
+    border-color: #ff0000;
+    margin-left: 10px;
+}

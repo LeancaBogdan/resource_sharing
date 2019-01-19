@@ -1,12 +1,50 @@
-.sign-in-button-area{
+/*Left area*/
+
+.left-area {
+    background-color: #e57f46;
+    height: 100vh;
+    width: 100vw;
+    top: 0px;
+}
+
+.logo-area {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.logo-image {
+    width: 400px;
+    height: auto;
+}
+
+/*Right area*/
+
+.right-area {
     background-color: #ffffff;
     height: 100vh;
     width: 100vw;
     top: 0px;
 }
-.sign-in-formular{
-    background-color: #f2f2f2;
-    height: 100vh;
-    width: 100vw;
-    top: 0px;
+
+.sign-up-texts, .back-to-login-area {
+    margin-left: 100px;
+    margin-top: 40px;
 }
+
+.need-account-text {
+    color: #b1b1bc;
+    font-size: 14px;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+.sign-up-text , .back-to-login-text{
+    color: #f47934;
+    font-size: 16px;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    font-weight: 900;
+    cursor: pointer;
+}
+

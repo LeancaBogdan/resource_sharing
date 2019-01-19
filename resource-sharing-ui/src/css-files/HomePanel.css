@@ -1,0 +1,19 @@
+.content {
+    height: 100vh;
+    width: 100vw;
+    background-color: #fcf0e9;
+
+}
+
+.products-area {
+    background-color: #fcf0e9;
+    width: 80%;
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translate(-50%);
+    transform: translate(-50%);
+}
+
+.product {
+    display: inline-block;
+}

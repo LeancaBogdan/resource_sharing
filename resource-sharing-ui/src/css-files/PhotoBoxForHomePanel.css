@@ -1,0 +1,47 @@
+.product-box {
+    margin-top: 10px;
+    margin-left: 10px;
+    width: 250px;
+    height: 300px;
+    border: black;
+    background-color: #ffffff;
+}
+
+.photo-placeholder {
+    margin-top: 10px;
+    width: 200px;
+    height: 150px;
+    margin-left: 20px;
+}
+
+.name {
+    margin-top: 10px;
+    text-align: center;
+    color: #e57f46;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.is-active {
+    margin-left: 5px;
+    width: 10px;
+    height: 10px;
+}
+
+.is-active-area {
+    margin-left: 20px;
+}
+
+.price {
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+.borrow-btn {
+    position: absolute;
+    margin-left: 90px;
+    margin-top: 10px;
+    background-color: #e57f46;
+    border-color: #e57f46;
+}

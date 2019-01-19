@@ -1,11 +1,9 @@
 import React, {Component} from 'react';
-import LoginTopbar from "./LoginTopBar";
 import WelcomePageBodyPanel from "./WelcomePageBodyPanel";
 
 class LoginPanel extends Component {
-    render(){
+    render() {
         return <div>
-            <LoginTopbar/>
             <WelcomePageBodyPanel/>
         </div>
     }

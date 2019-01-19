@@ -1,5 +1,5 @@
 .navbar-default {
-    background-color: #660000;
+    background-color: #e57f46;
     border-color: #4d0000;
     border-bottom: 0px;
 }
@@ -27,12 +27,15 @@
 .email-input {
     height: 25px;
     width: 30px;
+    font-size: 12px;
 }
 
 .password-input {
     height: 25px;
+    font-size: 12px;
 }
 
-.mytest {
-    margin-left: -20px;
+.login-button{
+    height: 15px;
+    color: #b1b1bc;
 }

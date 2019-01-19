@@ -1,0 +1,46 @@
+.login-fields {
+    position: absolute;
+    margin-left: 100px;
+    top: 50%;
+    -webkit-transform: translate(-0%, -50%);
+    transform: translate(-0%, -50%);
+
+}
+
+.email-label, .password-label {
+    margin-top: 20px;
+    color: #b1b1bc;
+}
+
+.email-input, .password-input {
+    height: 40px;
+    width: 700px;
+
+    font-size: 14px;
+
+    border-top-color: #ffffff;
+    border-left-color: #ffffff;
+    border-right-color: #ffffff;
+
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+.login-button {
+    margin-top: 20px;
+
+    border-radius: 30px;
+    letter-spacing: 2px;
+
+    width: 200px;
+
+    font-size: 24px;
+    color: #ffffff;
+    background-color: #f47934;
+
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translate(-50%);
+    transform: translate(-50%);
+}
