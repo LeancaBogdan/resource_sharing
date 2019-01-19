@@ -76,6 +76,7 @@ namespace WebApplication2.Controllers
             dbProduct.Name = product.Name;
             dbProduct.IsActive = product.IsActive;
             dbProduct.BorrowingPrice = product.BorrowingPrice;
+            dbProduct.IsAvailable = true;
             _context.SaveChanges();
 
             return new AcceptedResult();
@@ -99,7 +100,8 @@ namespace WebApplication2.Controllers
                 BorrowingPrice = product.BorrowingPrice,
                 Id = Guid.NewGuid(),
                 IsActive = (product.IsActive != null ? product.IsActive : true),
-                Owner = user
+                Owner = user,
+                IsAvailable = true
             };
             
             _context.Products.Add(productModel);

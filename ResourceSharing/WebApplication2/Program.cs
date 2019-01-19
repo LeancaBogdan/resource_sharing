@@ -25,6 +25,7 @@ namespace WebApplication2
             string myIP = Dns.GetHostByName(hostName).AddressList[0].ToString();  
             Console.WriteLine("My IP Address is :"+myIP);
 
+
             return WebHost.CreateDefaultBuilder(args)
                 .UseStartup<Startup>()
                 .UseUrls($"http://127.0.0.1:8080/");
