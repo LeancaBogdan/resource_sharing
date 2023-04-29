@@ -42,7 +42,7 @@
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "bootstrap": "^3.3.7",
-    "bootstrap-sass": "^3.3.7",
+    "bootstrap-sass": "^3.4.1",
     "storybook-react-router": "^1.0.1"
   },
   "eslintConfig": {
