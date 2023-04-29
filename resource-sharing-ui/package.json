@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "history": "^4.7.2",
-    "jquery": "^3.2.1",
+    "jquery": "^3.5.0",
     "moment": "^2.18.1",
     "node-sass": "^4.9.3",
     "node-sass-chokidar": "0.0.3",
